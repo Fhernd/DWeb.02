@@ -1,0 +1,284 @@
+body{
+    font-family: 'Dancing Script', cursive;
+    background: #02010a;
+}
+
+#contenido{
+    width: 900px;
+    margin: 0px auto 0px auto;
+}
+
+img{
+    box-shadow: #02010a 2px 2px;
+}
+
+header {
+    background: #5B7989;
+    border-radius: 10px 10px 0 0;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+header > h1{
+    color: #FFF;
+    text-shadow: #02010A 2px 2px;
+    text-align: left;
+    display: inline-block;
+}
+
+header > nav {
+    float: right;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: 2%;
+}
+
+header > nav > ul > li {
+    display: inline-block;
+}
+
+header > nav > ul > li:nth-child(2){
+    margin: 0 7px 0 7px;
+}
+
+header > nav > ul > li > a{
+    color: white;
+}
+
+.enlace_seleccionado{
+    text-decoration: none;
+}
+
+#banner_principal{
+    background: #82C3A6;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#banner_principal > img {
+    width: 70%;
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+#album_basico a{
+    color: #FFF;
+}
+
+#album_basico{
+    display: flex;
+    background: #d5c75f;
+    flex-flow: row;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#album_basico img {
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+}
+
+#album_basico > figure:nth-child(1) > img:hover{
+    -webkit-animation-name: pendulo;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+
+#album_basico > figure:nth-child(2) > img:hover{
+    transform: translate3d(20px, 0px, 10px);
+}
+
+@-webkit-keyframes pendulo{
+    from{
+        -webkit-transform: rotate(15deg);
+    }
+
+    to{
+        -webkit-transform: rotate(-15deg);
+    }
+}
+
+#album_espacio{
+    display: flex;
+    background: #d5c75f;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+
+.imagen_album{
+    width: 30%;
+    height: 30%;
+    flex: 1 2 30%;
+    margin: 5px;
+}
+
+#album_espacio img:nth-child(1){
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+#album_espacio img:nth-child(even){
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+#album_espacio img:nth-child(3){
+    -webkit-filter: sepia(90%);
+    filter: sepia(90%);
+}
+
+figure figcaption{
+    text-align: center;
+    text-decoration: underline;
+}
+
+footer{
+    display: flex;
+    flex-flow: row;
+    background: #C6d5c5;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+}
+
+footer > div {
+    align-self: flex-start ;
+}
+
+footer > div:nth-child(2){
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+footer > div:nth-child(3){
+    margin-right:2em;
+}
+
+footer li {
+    list-style-type: none;
+    text-indent: -2em;
+}
+
+header{
+    animation: slideIn 2s, reboteArriba 2s;
+}
+
+@keyframes slidein {
+    0% {
+        margin-top: 150%;
+    }
+
+    60% {
+        margin-left: 0%;
+    }
+
+    100%{
+        margin: 0%;
+    }
+}
+
+@keyframes reboteArriba {
+    0% {
+        opacity: 0;
+        transform: translateY(1100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px){
+    body{
+        background: #fff;
+    }
+    #contenido{
+        width: 100%;
+    }
+    header{
+        display: flex;
+        flex-flow: column;
+    }
+    header > h1{
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    header {
+        text-align: center;
+    }
+
+    header a{
+        font-size: 25px;
+    }
+
+    #album_basico{
+        flex-flow: column;
+    }
+
+    #album_basico a {
+        font-size: 25px;
+    }
+
+    footer{
+        flex-flow: column;
+        justify-content: flex-start;
+    }
+
+    footer > div{
+        margin-left: 20px;
+        text-align: start;
+    }
+
+    footer > div:nth-child(2){
+        margin-left: 1em;
+        margin-right: 2em;
+    }
+
+    footer > div:nth-child(4){
+        margin-bottom: 2em;
+    }
+
+    footer > div > ul > li {
+        font-size: 17px;
+    }
+
+    #album_basico figure {
+        text-align: center;
+    }
+
+    #album_basico > figure > img{
+        width: 70%;
+        height: 70%;
+    }
+
+    #album_espacio{
+        flex-flow: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagen_album{
+        width: 70%;
+        height: 70%;
+        flex: 1 2 30%;
+        margin: 5px;
+        text-align: center;
+    }
+}
